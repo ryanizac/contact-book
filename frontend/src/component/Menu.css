@@ -1,0 +1,5 @@
+.menu{
+    border-bottom: var(--defaultBorder);
+    display: flex;
+    align-items: center;
+}

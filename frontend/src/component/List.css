@@ -1,0 +1,24 @@
+.list{
+    grid-row: 2 / 4;
+    background: #F9F9F9;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: var(--defaultBorder);
+}
+
+.list::-webkit-scrollbar {
+    width: 10px;
+    background: none;
+}
+  
+.list::-webkit-scrollbar-track {
+    background: none;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background: rgba(80, 80, 80, 0.308);
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+    background: rgba(80, 80, 80, 0.411);
+}

@@ -1,0 +1,24 @@
+.change-panel{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.box-panel{
+    width: 600px;
+    height: 500px;
+    padding: 40px;
+    background: white;
+    border: 1px solid var(--blue2);
+    border-radius: 30px;
+}
+
+.group-buttons{
+    justify-content: flex-end;
+}

@@ -1,0 +1,16 @@
+.button{
+    color: var(--buttonsColors);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    width: 100px;
+}
+
+.button::selection{
+    background: none;
+}
+
+.buttonDisabled{
+    color: gray;
+}
