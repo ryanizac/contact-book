@@ -5,4 +5,5 @@
     align-items: center;
     border: none;
     outline: none;
+    text-transform: capitalize;
 }

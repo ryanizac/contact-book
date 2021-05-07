@@ -25,6 +25,10 @@ export function ContextConfigMain({ children }) {
         current: {}
     })
 
+    const [filterFind, setFilterFind] = useState({value: "", newList: [
+        // {id:1, name:"teste", cell:"1234", note: "aaaaaaa"}
+    ]})
+
     // frits request in server - list, get all
     useEffect(() => {
         fetch(`${baseURL}/list`, {
@@ -40,6 +44,20 @@ export function ContextConfigMain({ children }) {
     useEffect(() => {
         organizeList()
     }, [contact.current])
+
+    useEffect(() => {
+        if(filterFind.value !== ""){
+            console.log("buscando");
+            setFilterFind(previous => {
+                let tempNewList = contact.list.filter(
+                    element => element.name.includes(filterFind.value)
+                )
+                return ({...previous, newList: tempNewList})
+            })
+        }else{
+            console.log("normalizando");
+        }
+    }, [filterFind.value])
 
     function organizeList() {
         console.log("Ordenando lista de contatos pelo nome");
@@ -177,7 +195,8 @@ export function ContextConfigMain({ children }) {
             mode, setMode,
             detailContact, deleteContact,
             updateContact, createContact,
-            breakModes
+            breakModes,
+            filterFind, setFilterFind
         }}>
             {mode.create || mode.update ? <ChangePanel /> : ""}
             {children}

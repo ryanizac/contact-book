@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import "./Find.css"
 
+import { Context } from '../util/Context'
+
 export default function BoxFind({ children, ...props }) {
-    const [value, setValue] = useState("")
+    const { filterFind, setFilterFind } = useContext(Context)
 
     return (
-        <input className="find" value={value} {...props}
-            onChange={(e) => setValue(e.target.value)} />
+        <input className="find" value={filterFind.filterFind} {...props}
+            onChange={(e) => setFilterFind(previous => ({...previous, value: e.target.value}))} />
     )
 }
